@@ -55,6 +55,10 @@ class Generator(GeneratorBase):
             if 'title' in measures:
                 normalise_measures[1]['title'] = measures['title']
             measure_handling.append(normalise_measures)
+            source['fields'].append({
+                'header': 'value',
+                'osType': 'value',
+            })
             model_params['os-types']['value'] = 'value'
             model_params['options']['value'] = {
                 'currency': measures['currency']
