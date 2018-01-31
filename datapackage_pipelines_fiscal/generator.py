@@ -161,10 +161,10 @@ class Generator(GeneratorBase):
                     ] + extra_measures
                 )
             }),
-        ] + dedpulicate_steps + [
+        ] + measure_handling + dedpulicate_steps + [
             (step['processor'], step.get('parameters', {}))
             for step in source.get('postprocessing', [])
-        ] + measure_handling + [
+        ] + [
             ('fiscal.model', model_params),
             ('dump.to_zip', {
                 'out-file': partial_output_file,
